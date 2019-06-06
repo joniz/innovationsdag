@@ -9,7 +9,7 @@ namespace Innovationsdagen.ViewModels
 {
     public class ShellViewModel : Screen
     {
-        private Observa
+//        private Observa
 
 
 
