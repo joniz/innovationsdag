@@ -4,14 +4,28 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Caliburn.Micro;
+using Innovationsdagen.Models;
+using System.Collections.ObjectModel;
 
 namespace Innovationsdagen.ViewModels
 {
     public class ShellViewModel : Screen
     {
-//        private Observa
+        public ObservableCollection<Server> Servers;
+        
+        public ShellViewModel()
+        {
+            Servers = new ObservableCollection<Server>();
 
-
+            for(int i = 0; i < 5; i++)
+            {
+                Servers.Add(new Server
+                {
+                    Name = $"Nytt namn {i}"
+                });
+            }
+            
+        }
 
     }
 }

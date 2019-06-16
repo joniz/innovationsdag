@@ -10,8 +10,11 @@
 
         
         
-        <ListView SelectionMode="Single" Margin="5" >
-
+        <ListView SelectionMode="Single" Margin="5" ItemsSource="{Binding Servers}">
+            <ListView>
+                <GridViewColumn Width="60" Header="Name" DisplayMemberBinding="{Binding Name}"/>
+                
+            </ListView>
 
 
         </ListView>
