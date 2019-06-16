@@ -7,16 +7,35 @@
         mc:Ignorable="d"
         Title="ShellView" Height="450" Width="800">
     <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition />
+            <ColumnDefinition Width="200"/>
+        </Grid.ColumnDefinitions>
 
-        
-        
-        <ListView SelectionMode="Single" Margin="5" ItemsSource="{Binding Servers}">
-            <ListView>
-                <GridViewColumn Width="60" Header="Name" DisplayMemberBinding="{Binding Name}"/>
-                
+        <Grid>
+
+            <ListView SelectionMode="Single" Margin="5" ItemsSource="{Binding Path=Servers}">
+               
+                    <ListView.View>
+                        <GridView>
+                            <GridViewColumn Width="200" Header="Servers" DisplayMemberBinding="{Binding Name}"/>
+                        </GridView>
+                    </ListView.View>
+               
             </ListView>
+        </Grid>
+        <Grid Grid.Column="1">
+            <ListView Margin="5">
+                <ListView.View>
+                <GridView>
+
+                    <GridViewColumn Width="200" Header="Servers" DisplayMemberBinding="{Binding Name}"/>
+                </GridView>
+                </ListView.View>
 
 
-        </ListView>
+            </ListView>
+        </Grid>
+
     </Grid>
 </Window>

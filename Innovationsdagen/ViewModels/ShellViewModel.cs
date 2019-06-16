@@ -11,7 +11,7 @@ namespace Innovationsdagen.ViewModels
 {
     public class ShellViewModel : Screen
     {
-        public ObservableCollection<Server> Servers;
+        public ObservableCollection<Server> Servers { get; set; }
         
         public ShellViewModel()
         {
