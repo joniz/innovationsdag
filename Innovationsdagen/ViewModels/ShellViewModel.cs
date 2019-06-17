@@ -6,22 +6,24 @@ using System.Threading.Tasks;
 using Caliburn.Micro;
 using Innovationsdagen.Models;
 using System.Collections.ObjectModel;
+using System.Windows.Media;
 
 namespace Innovationsdagen.ViewModels
 {
     public class ShellViewModel : Screen
     {
-        public ObservableCollection<Server> Servers { get; set; }
+        public ObservableCollection<ServerViewModel> Servers { get; set; }
+
         
         public ShellViewModel()
         {
-            Servers = new ObservableCollection<Server>();
+            Servers = new ObservableCollection<ServerViewModel>();
 
             for(int i = 0; i < 5; i++)
             {
-                Servers.Add(new Server
+                Servers.Add(new ServerViewModel
                 {
-                    Name = $"Nytt namn {i}"
+                    FullName = $"Nytt namn {i}"
                 });
             }
             

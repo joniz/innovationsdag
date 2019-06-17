@@ -10,5 +10,7 @@ namespace Innovationsdagen.Models
     {
         public string Name { get; set; }
 
+        public bool Avaliable { get; set; }
+
     }
 }

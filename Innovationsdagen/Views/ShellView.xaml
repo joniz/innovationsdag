@@ -15,10 +15,20 @@
         <Grid>
 
             <ListView SelectionMode="Single" Margin="5" ItemsSource="{Binding Path=Servers}">
-               
-                    <ListView.View>
+                <ListView.Resources>
+                    <Style TargetType="{x:Type ListViewItem}">
+                        <Setter Property="IsSelected" Value="{Binding IsSelected, Mode=TwoWay}"/>
+                    </Style>
+                </ListView.Resources>
+                <ListView.View>
                         <GridView>
-                            <GridViewColumn Width="200" Header="Servers" DisplayMemberBinding="{Binding Name}"/>
+                            <GridViewColumn Width="200" Header="Servers" DisplayMemberBinding="{Binding FullName}">
+                                <GridViewColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <TextBlock Background="Blue" Width="Auto"/>
+                                    </DataTemplate>
+                                </GridViewColumn.CellTemplate>
+                        </GridViewColumn>
                         </GridView>
                     </ListView.View>
                

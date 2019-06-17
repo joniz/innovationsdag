@@ -22,6 +22,7 @@ namespace Innovationsdagen.Views
         public ShellView()
         {
             InitializeComponent();
+            
         }
     }
 }
