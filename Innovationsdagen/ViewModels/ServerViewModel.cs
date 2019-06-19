@@ -12,8 +12,6 @@ namespace Innovationsdagen.ViewModels
     {
         private string _fullName;
 
-        public bool IsSelected { get; set; }
-
         public string FullName
         {
             get => _fullName;

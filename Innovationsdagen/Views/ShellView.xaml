@@ -17,15 +17,27 @@
             <ListView SelectionMode="Single" Margin="5" ItemsSource="{Binding Path=Servers}">
                 <ListView.Resources>
                     <Style TargetType="{x:Type ListViewItem}">
-                        <Setter Property="IsSelected" Value="{Binding IsSelected, Mode=TwoWay}"/>
+                        <Style.Triggers>
+                            <DataTrigger Binding="{Binding FullName}"
+                                         Value="Nytt namn 1">
+                                <Setter Property="Background"
+                                        Value="Red" />
+                            </DataTrigger>
+                        </Style.Triggers>
                     </Style>
                 </ListView.Resources>
+                <ListView.ItemContainerStyle>
+                    <Style TargetType="ListViewItem">
+                        <Setter Property="Height" Value="45" />
+                    </Style>
+                </ListView.ItemContainerStyle>
+                
                 <ListView.View>
                         <GridView>
                             <GridViewColumn Width="200" Header="Servers" DisplayMemberBinding="{Binding FullName}">
                                 <GridViewColumn.CellTemplate>
                                     <DataTemplate>
-                                        <TextBlock Background="Blue" Width="Auto"/>
+                                        <TextBox Text="Hej" Background="Blue" Width="50"/>
                                     </DataTemplate>
                                 </GridViewColumn.CellTemplate>
                         </GridViewColumn>
@@ -39,7 +51,7 @@
                 <ListView.View>
                 <GridView>
 
-                    <GridViewColumn Width="200" Header="Servers" DisplayMemberBinding="{Binding Name}"/>
+                    <GridViewColumn Width="200"  Header="Servers" DisplayMemberBinding="{Binding Name}"/>
                 </GridView>
                 </ListView.View>
 
